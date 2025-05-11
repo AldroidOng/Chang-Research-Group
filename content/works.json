@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Solid-State Hydrogen Cell",
+    "description": "A novel hydrogen storage using nanostructured alloys.",
+    "image": "/images/work1.jpg",
+    "date": "2025-04-12",
+    "isFeatured": true
+  },
+  {
+    "id": "2",
+    "title": "Solid-State Hydrogen Cell",
+    "description": "A novel hydrogen storage using nanostructured alloys.",
+    "image": "/images/work1.jpg",
+    "date": "2025-04-12",
+    "isFeatured": true
+  },
+  {
+    "id": "3",
+    "title": "Thermoelectric Optimization",
+    "description": "New insights into bismuth telluride cooling modules.",
+    "image": "/images/work2.jpg",
+    "date": "2025-03-05",
+    "isFeatured": false
+  },
+  {
+    "id": "4",
+    "title": "Thermoelectric Optimization",
+    "description": "New insights into bismuth telluride cooling modules.",
+    "image": "/images/work2.jpg",
+    "date": "2025-03-05",
+    "isFeatured": false
+  },
+  {
+    "id": "5",
+    "title": "Thermoelectric Optimization",
+    "description": "New insights into bismuth telluride cooling modules.",
+    "image": "/images/work2.jpg",
+    "date": "2025-03-05",
+    "isFeatured": false
+  },
+  {
+    "id": "6",
+    "title": "Thermoelectric Optimization",
+    "description": "New insights into bismuth telluride cooling modules.",
+    "image": "/images/work2.jpg",
+    "date": "2025-03-05",
+    "isFeatured": false
+  }
+]

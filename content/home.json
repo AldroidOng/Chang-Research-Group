@@ -1,0 +1,9 @@
+{
+  "heroBanner": {
+    "imageUrl": "/images/banner.jpg",
+    "title": "Functional Materials for Clean Energy | Monash University Malaysia",
+    "subtitle": "We focuses on III-V semiconductors and functional oxides for sensing, energy storage and photoelectrochemical applications. We combine nanofabrication, ferro-/piezoelectrics and advanced AFM technique to understand and modify surfaces and interfaces, improving conduction and charge transport across heterojunction. We dedicated our work to achieve clean energy.",
+    "buttonText": "Learn more",
+    "buttonLink": "/about"
+  }
+}
