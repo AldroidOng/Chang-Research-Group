@@ -25,12 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <div className="min-h-screen font-sans antialiased">
-      <HeroBannerTitle
-        imageUrl="/images/research/hero-banner.jpg"
-        title="Research"
-        subtitle="Explore our cutting-edge research initiatives, supported by state-of-the-art infrastructure and strengthened through collaborations with leading universities worldwide."
-      />
-      <Breadcrumbs />
       <main>{children}</main>
     </div>
   );

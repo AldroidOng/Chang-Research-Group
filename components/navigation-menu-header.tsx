@@ -53,7 +53,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function NavigationMenuDemo() {
+export function NavigationMenuHeader() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -75,6 +75,13 @@ export function NavigationMenuDemo() {
           <NavigationMenuLink asChild>
             <Link href="/team" className={navigationMenuTriggerStyle()}>
               Team
+            </Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href="/publication" className={navigationMenuTriggerStyle()}>
+              Publication
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
