@@ -1,13 +1,13 @@
 import Image from "next/image";
-import HeroBanner from "@/components/hero-banner-detailed";
-import homeContent from "@/content/home.json";
-import { WorkShowcase } from "@/components/WorkShowcase";
-import worksData from "@/content/works.json";
-import featuredWorksData from "@/content/featured-works.json";
-import { FeaturedWorksCarousel } from "@/components/FeaturedWorksCarousel";
-import HeroBannerTitle from "@/components/hero-banner-left-align";
-import Breadcrumbs from "@/components/breadcrums";
-import Card from "@/components/Card";
+import HeroBanner from "@components/hero-banner-detailed";
+import homeContent from "@data/home.json";
+import { WorkShowcase } from "@components/WorkShowcase";
+import worksData from "@data/works.json";
+import featuredWorksData from "@data/featured-works.json";
+import { FeaturedWorksCarousel } from "@components/FeaturedWorksCarousel";
+import HeroBannerTitle from "@components/hero-banner-left-align";
+import Breadcrumbs from "@components/breadcrums";
+import Card from "@components/Card";
 
 export default function Home() {
   const { heroBanner } = homeContent;

@@ -1,7 +1,7 @@
 // app/components/Header.tsx
 "use client";
 
-import { NavigationMenuHeader } from "@/components/navigation-menu-header"; // Adjust the path as needed
+import { NavigationMenuHeader } from "@components/navigation-menu-header"; // Adjust the path as needed
 
 export default function Header() {
   return (

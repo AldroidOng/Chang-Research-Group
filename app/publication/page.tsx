@@ -1,107 +1,96 @@
-import Image from "next/image";
+"use client";
 
-const principalInvestigator = {
-  name: "Dr. Jane Smith",
-  imageUrl: "/images/team/jane-smith.jpg",
-  title: "Principal Investigator",
-  bio: "Dr. Jane Smith leads the research group with expertise in nanomaterials, semiconductor devices, and advanced instrumentation.",
-  email: "jane.smith@university.edu",
-  phone: "+123 456 7890",
-};
+import { useState } from "react";
+import { publications } from "@data/publications";
 
-const groupMembers = [
-  {
-    name: "Alice Tan",
-    imageUrl: "/images/team/alice.jpg",
-    position: "PhD Candidate",
-  },
-  {
-    name: "Bob Lee",
-    imageUrl: "/images/team/bob.jpg",
-    position: "Research Assistant",
-  },
-  {
-    name: "Charlie Wong",
-    imageUrl: "/images/team/charlie.jpg",
-    position: "Postdoctoral Fellow",
-  },
-  // Add more members as needed
-];
+interface Publication {
+  authors: string;
+  title: string;
+  journal?: string;
+  volume?: string;
+  pages?: string;
+  doi?: string;
+  year: number;
+  [key: string]: any;
+}
 
-const alumni = [
-  "Daniel Lim",
-  "Emily Teo",
-  "Farah Ahmad",
-  "Gavin Tan",
-  // Add more as needed
-];
+const publicationsByYear = publications.reduce((acc, pub) => {
+  if (!acc[pub.year]) acc[pub.year] = [];
+  acc[pub.year].push(pub);
+  return acc;
+}, {} as Record<number, Publication[]>);
 
-export default function TeamPage() {
+const sortedYears = Object.keys(publicationsByYear)
+  .map(Number)
+  .sort((a, b) => b - a); // descending
+
+export default function PublicationsPage() {
+  const [openYears, setOpenYears] = useState<Record<number, boolean>>(
+    Object.fromEntries(sortedYears.map((y) => [y, true]))
+  );
+
+  const toggleYear = (year: number) => {
+    setOpenYears((prev) => ({
+      ...prev,
+      [year]: !prev[year],
+    }));
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
-      {/* Principal Investigator */}
-      <section className="flex flex-col md:flex-row items-center gap-8">
-        <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-gray-300">
-          <Image
-            src={principalInvestigator.imageUrl}
-            alt={principalInvestigator.name}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold">{principalInvestigator.name}</h2>
-          <p className="text-gray-600 font-medium">
-            {principalInvestigator.title}
-          </p>
-          <p className="mt-4 text-gray-700">{principalInvestigator.bio}</p>
-          <p className="mt-2 text-gray-700">
-            <strong>Email:</strong>{" "}
-            <a
-              href={`mailto:${principalInvestigator.email}`}
-              className="text-blue-600 hover:underline"
-            >
-              {principalInvestigator.email}
-            </a>
-          </p>
-          <p className="text-gray-700">
-            <strong>Phone:</strong> {principalInvestigator.phone}
-          </p>
-        </div>
-      </section>
+    <div className="container mx-auto px-4 py-12 space-y-16 ">
+      <h1 className="text-3xl font-bold mb-8">Publications</h1>
 
-      {/* Group Members */}
-      <section>
-        <h3 className="text-xl font-semibold mb-6">Group Members</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {groupMembers.map((member) => (
-            <div key={member.name} className="text-center space-y-2">
-              <div className="w-28 h-28 mx-auto relative rounded-full overflow-hidden border-2 border-gray-300">
-                <Image
-                  src={member.imageUrl}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-gray-900 font-medium">{member.name}</p>
-                <p className="text-sm text-gray-600">{member.position}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {sortedYears.map((year) => (
+        <section
+          key={year}
+          className="border rounded-xl shadow-sm bg-white overflow-hidden"
+        >
+          <button
+            onClick={() => toggleYear(year)}
+            className="w-full flex justify-between items-center px-6 py-4 bg-gray-100 hover:bg-gray-200 text-left"
+          >
+            <h2 className="text-xl font-semibold text-gray-800">{year}</h2>
+            <span className="text-lg text-gray-500">
+              {openYears[year] ? "−" : "+"}
+            </span>
+          </button>
 
-      {/* Alumni */}
-      <section>
-        <h3 className="text-xl font-semibold mb-4">Alumni</h3>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          {alumni.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
-      </section>
+          {openYears[year] && (
+            <ul className="px-6 py-4 space-y-4">
+              {publicationsByYear[year].map((pub, i) => (
+                <li key={i}>
+                  <p className="text-gray-700">
+                    <strong>{pub.authors}</strong>, <em>{pub.title}</em>,{" "}
+                    {pub.journal && <>{pub.journal}</>}
+                    {pub.volume && <>, vol. {pub.volume}</>}
+                    {pub.pages && <>, pp. {pub.pages}</>}
+                    {pub.year && (
+                      <>
+                        {" ("}
+                        {pub.year}
+                        {")"}.
+                      </>
+                    )}
+                    {pub.doi && (
+                      <>
+                        {" DOI: "}
+                        <a
+                          href={`https://doi.org/${pub.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 underline hover:text-blue-800"
+                        >
+                          https://doi.org/{pub.doi}
+                        </a>
+                      </>
+                    )}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import Breadcrumbs from "@/components/breadcrums";
-import HeroBannerTitle from "@/components/hero-banner-left-align";
+import Breadcrumbs from "@components/breadcrums";
+import HeroBannerTitle from "@components/hero-banner-left-align";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 

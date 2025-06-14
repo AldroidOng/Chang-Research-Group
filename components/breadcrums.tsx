@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -22,39 +22,37 @@ const Breadcrumbs = () => {
   const pathnames = pathname.split("/").filter((x) => x);
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {pathnames.map((value, index) => {
-          const href = `/${pathnames.slice(0, index + 1).join("/")}`;
-          console.log(pathnames);
-          console.log(href);
-          const isFrist = index === 0;
-          console.log(isFrist);
-          const isLast = index === pathnames.length - 1;
-          console.log(isLast);
-          const label = labelMap[value] || decodeURIComponent(value);
+    <div className="mx-auto px-6 pt-6">
+      <Breadcrumb>
+        <BreadcrumbList>
+          {pathnames.map((value, index) => {
+            const href = `/${pathnames.slice(0, index + 1).join("/")}`;
+            const isFrist = index === 0;
+            const isLast = index === pathnames.length - 1;
+            const label = labelMap[value] || decodeURIComponent(value);
 
-          return (
-            <div key={href} className="flex items-center">
-              {!isFrist ? <BreadcrumbSeparator /> : undefined}
-              <BreadcrumbItem>
-                {isLast ? (
-                  <BreadcrumbPage className="capitalize">
-                    {label}
-                  </BreadcrumbPage>
-                ) : (
-                  <BreadcrumbLink asChild>
-                    <Link href={href} className="text-blue-600 capitalize">
+            return (
+              <div key={href} className="flex items-center">
+                {!isFrist ? <BreadcrumbSeparator /> : undefined}
+                <BreadcrumbItem>
+                  {isLast ? (
+                    <BreadcrumbPage className="capitalize">
                       {label}
-                    </Link>
-                  </BreadcrumbLink>
-                )}
-              </BreadcrumbItem>
-            </div>
-          );
-        })}
-      </BreadcrumbList>
-    </Breadcrumb>
+                    </BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink asChild>
+                      <Link href={href} className="text-blue-600 capitalize">
+                        {label}
+                      </Link>
+                    </BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+              </div>
+            );
+          })}
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
   );
 };
 

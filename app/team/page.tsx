@@ -37,9 +37,9 @@ const alumni = [
 
 export default function TeamPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+    <div className="container mx-auto px-4 py-12 space-y-16">
       {/* Principal Investigator */}
-      <h3 className="text-xl font-semibold mb-6">Principal Investigator</h3>
+      <h3 className="text-3xl font-bold mb-4 pb-4">Principal Investigator</h3>
       <section className="flex flex-col md:flex-row items-center gap-8">
         <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-gray-300">
           <Image
@@ -73,7 +73,7 @@ export default function TeamPage() {
 
       {/* Group Members */}
       <section>
-        <h3 className="text-xl font-semibold mb-6">Group Members</h3>
+        <h3 className="text-3xl font-bold mb-4 pb-4">Group Members</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {groupMembers.map((member) => (
             <div key={member.name} className="text-center space-y-2">
@@ -96,7 +96,7 @@ export default function TeamPage() {
 
       {/* Alumni */}
       <section>
-        <h3 className="text-xl font-semibold mb-4">Alumni</h3>
+        <h3 className="text-3xl font-bold mb-4 pb-4">Alumni</h3>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           {alumni.map((name) => (
             <li key={name}>{name}</li>
