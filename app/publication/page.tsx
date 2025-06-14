@@ -11,7 +11,6 @@ interface Publication {
   pages?: string;
   doi?: string;
   year: number;
-  [key: string]: any;
 }
 
 const publicationsByYear = publications.reduce((acc, pub) => {

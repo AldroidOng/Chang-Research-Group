@@ -1,8 +1,5 @@
-import Image from "next/image";
 import HeroBanner from "@components/hero-banner-detailed";
 import homeContent from "@data/home.json";
-import { WorkShowcase } from "@components/WorkShowcase";
-import worksData from "@data/works.json";
 import featuredWorksData from "@data/featured-works.json";
 import { FeaturedWorksCarousel } from "@components/FeaturedWorksCarousel";
 

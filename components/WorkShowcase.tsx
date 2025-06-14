@@ -14,7 +14,6 @@ interface WorkShowcaseProps {
 }
 
 export function WorkShowcase({ works }: WorkShowcaseProps) {
-  const featured = works.filter((w) => w.isFeatured);
   const recent = works
     .filter((w) => !w.isFeatured)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

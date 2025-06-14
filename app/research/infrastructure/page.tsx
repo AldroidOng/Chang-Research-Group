@@ -1,6 +1,5 @@
 // app/research-gallery/page.tsx
 import Image from "next/image";
-import Link from "next/link";
 import BrukerAtomicForceMicroscopy from "./components/BrukerAtomicForceMicroscopy";
 
 interface ResearchItem {
