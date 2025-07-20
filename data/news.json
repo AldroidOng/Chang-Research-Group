@@ -1,0 +1,25 @@
+{
+  "gatherings": [
+    {
+      "title": "Visit to MCUT, Taiwan",
+      "imageUrl": "/images/news/mcut-taiwan.png"
+    },
+    {
+      "title": "Dinner 2017",
+      "imageUrl": "/images/news/dinner-2017.png"
+    }
+  ],
+  "studentAwards": [
+    {
+      "name": "Alice Tan",
+      "title": "Best Paper Award – IEEE Conference 2024",
+      "description": "For her outstanding research on AI in robotics.",
+      "imageUrl": "/images/news/chang.png"
+    },
+    {
+      "name": "John Lim",
+      "award": "Dean’s List 2023",
+      "imageUrl": "/images/news/edward-chu.jpg"
+    }
+  ]
+}

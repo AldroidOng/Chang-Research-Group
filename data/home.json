@@ -1,9 +1,29 @@
 {
   "heroBanner": {
     "imageUrl": "/images/banner.jpg",
-    "title": "Functional Materials for Clean Energy | Monash University Malaysia",
-    "subtitle": "We focuses on III-V semiconductors and functional oxides for sensing, energy storage and photoelectrochemical applications. We combine nanofabrication, ferro-/piezoelectrics and advanced AFM technique to understand and modify surfaces and interfaces, improving conduction and charge transport across heterojunction. We dedicated our work to achieve clean energy.",
+    "title": "Ferroelectric & Semiconductor Energy (FUSE) Lab | National Yang Ming Chiao Tung University",
+    "subtitle": "The FUSE (Ferroelectric and Semiconductor Energy) lab studies the fabrication and characterization of advanced ferroelectric and wide bandgap semiconductor materials. The key materials are Gallium Nitride (GaN), Gallium Oxide (Ga₂O₃), Aluminium Scandium Nitride (AlScN), and High-entropy Bismuth Ferrite (BiFeO₃). Our core tools include sputtering and metal-organic chemical vapor deposition (MOCVD) systems, which enable us to develop high-quality thin films.\nThrough systematic analysis and innovative fabrication techniques, FUSE lab aims to unlock the potential of ferroelectric and semiconductor heterostructures for energy storage, high-power electronics, and integrated device applications. Our goal is to contribute to cutting-edge technologies that shape the future of sustainable energy and next-generation electronic systems.",
     "buttonText": "Learn more",
     "buttonLink": "/about"
-  }
+  },
+  "selectePublication": [
+    {
+      "link": "https://doi.org/10.1063/5.0151232",
+      "title": "Photostrictive behaviour as the piezo-phototronics effect in InGaN/GaN multiple quantum wells"
+    },
+    {
+      "link": "https://doi.org/10.1063/5.0151232",
+      "title": "Synergistic Role of Facet-Engineered Surface and Ferroelectric Polarization in Photoelectrochemical Water Reduction over Pure BFO Thin Film"
+    }
+  ],
+  "featuredResearch": [
+    {
+      "title": "Energy storage: High-entropy ferroelectric thin film design",
+      "imageUrl": "/images/ferroelectric.jpg"
+    },
+    {
+      "title": "Next generation electronics: Gallium nitride and Gallium oxide",
+      "imageUrl": "/images/wide_bandgap.jpg"
+    }
+  ]
 }

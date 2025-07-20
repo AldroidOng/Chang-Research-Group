@@ -24,17 +24,17 @@ export function NavigationMenuHeader() {
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuLink asChild>
             <Link href="/research" className={navigationMenuTriggerStyle()}>
               Research
             </Link>
           </NavigationMenuLink>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild>
-            <Link href="/team" className={navigationMenuTriggerStyle()}>
-              Team
+            <Link href="/members" className={navigationMenuTriggerStyle()}>
+              Members
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -42,6 +42,13 @@ export function NavigationMenuHeader() {
           <NavigationMenuLink asChild>
             <Link href="/publication" className={navigationMenuTriggerStyle()}>
               Publication
+            </Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href="/news" className={navigationMenuTriggerStyle()}>
+              News
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

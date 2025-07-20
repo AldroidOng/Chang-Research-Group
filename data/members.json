@@ -1,0 +1,37 @@
+{
+  "principalInvestigator": {
+    "name": "Dr. Chang Wei Sea",
+    "imageUrl": "/images/team/chang.png",
+    "title": "Principal Investigator",
+    "position": "CEng (UK), MIMechE",
+    "bio": "Dr. Chang Wei Sea has her PhD from the National University of Singapore. She is an Associate Professor at the School of Engineering (Mechanical Discipline), Monash University Malaysia. She is also an Associate Fellow at the Institute of Microengineering & Nanoelectronics (IMEN), UKM. Currently, she serves as an Associate Editor for the Journal of American Ceramics Society (JACerS). In 2018, she was the visiting scholar in SSLEEC, UCSB for six-month. She is a member of the Young Scientists Network-Academy of Sciences Malaysia (YSN-ASM) since 2019.",
+    "email": "chang.wei.sea@monash.edu",
+    "phone": "+603 – 5514 5677",
+    "link": "https://www.monash.edu.my/engineering/people/chang-wei-sea",
+    "universityUrl": "https://www.nycu.edu.tw/nycu/en/index",
+    "university": "National Yang Ming Chiao Tung University"
+  },
+  "graduateStudents": [
+    {
+      "name": "Dr NSK Gowthaman",
+      "imageUrl": "/images/team/gowthaman.jpg",
+      "position": "Postdoctoral researcher"
+    },
+    {
+      "name": "Edward Chu",
+      "imageUrl": "/images/team/edward-chu.jpg",
+      "position": "PhD student"
+    }
+  ],
+  "alumni": [
+    "Dr Tan Kok Hong",
+    "Dr Lim Fang Sheng",
+    "Mr Abdulhakeem Adefioye",
+    "Dr Loo Chin Chyi",
+    "Dr Tan Kah Hui",
+    "Dr Jesu Anthoniappen",
+    "Dr Flora Mae Ruiz",
+    "Mr Wu Wen-Hao",
+    "Mr Wu Yu-Jie"
+  ]
+}

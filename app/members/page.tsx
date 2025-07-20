@@ -1,39 +1,9 @@
 import Image from "next/image";
+import membersConfig from "@data/members.json";
+import { Metadata } from "next";
+import { Button } from "@components/ui/button";
 
-const principalInvestigator = {
-  name: "Dr. Chang Wei Sea",
-  imageUrl: "/images/team/chang.png",
-  title: "Principal Investigator",
-  position: "CEng (UK), MIMechE",
-  bio: "Dr. Chang Wei Sea has her PhD from the National University of Singapore. She is an Associate Professor at the School of Engineering (Mechanical Discipline), Monash University Malaysia. She is also an Associate Fellow at the Institute of Microengineering & Nanoelectronics (IMEN), UKM. Currently, she serves as an Associate Editor for the Journal of American Ceramics Society (JACerS). In 2018, she was the visiting scholar in SSLEEC, UCSB for six-month. She is a member of the Young Scientists Network-Academy of Sciences Malaysia (YSN-ASM) since 2019.",
-  email: "chang.wei.sea@monash.edu",
-  phone: "+603 – 5514 5677",
-};
-
-const groupMembers = [
-  {
-    name: "Dr NSK Gowthaman",
-    imageUrl: "/images/team/gowthaman.jpg",
-    position: "Postdoctoral researcher",
-  },
-  {
-    name: "Edward Chu",
-    imageUrl: "/images/team/edward-chu.jpg",
-    position: "PhD student",
-  },
-];
-
-const alumni = [
-  "Dr Tan Kok Hong",
-  "Dr Lim Fang Sheng",
-  "Mr Abdulhakeem Adefioye",
-  "Dr Loo Chin Chyi",
-  "Dr Tan Kah Hui",
-  "Dr Jesu Anthoniappen",
-  "Dr Flora Mae Ruiz",
-  "Mr Wu Wen-Hao",
-  "Mr Wu Yu-Jie",
-];
+const { principalInvestigator, graduateStudents, alumni } = membersConfig;
 
 export default function TeamPage() {
   return (
@@ -53,7 +23,15 @@ export default function TeamPage() {
         <div className="flex-1">
           <h2 className="text-2xl font-bold">{principalInvestigator.name}</h2>
           <p className="text-gray-600 font-medium">
-            {principalInvestigator.position}
+            {principalInvestigator.position}, {""}
+            <a
+              href={principalInvestigator.universityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              {principalInvestigator.university}
+            </a>
           </p>
           <p className="mt-4 text-gray-700">{principalInvestigator.bio}</p>
           <p className="mt-2 text-gray-700">
@@ -71,11 +49,11 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Group Members */}
+      {/* Graduate students */}
       <section>
-        <h3 className="text-3xl font-bold mb-4 pb-4">Group Members</h3>
+        <h3 className="text-3xl font-bold mb-4 pb-4">Graduate Students</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {groupMembers.map((member) => (
+          {graduateStudents.map((member) => (
             <div key={member.name} className="text-center space-y-2">
               <div className="w-28 h-28 mx-auto relative rounded-full overflow-hidden border-2 border-gray-300">
                 <Image
