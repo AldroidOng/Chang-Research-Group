@@ -16,14 +16,15 @@
       "title": "Synergistic Role of Facet-Engineered Surface and Ferroelectric Polarization in Photoelectrochemical Water Reduction over Pure BFO Thin Film"
     }
   ],
-  "featuredResearch": [
+  "featuredWorks": [
     {
-      "title": "Energy storage: High-entropy ferroelectric thin film design",
-      "imageUrl": "/images/ferroelectric.jpg"
+      "title": "ZnO nanorods visible light trapping - Small, vol.14, pp 1704053 (2018asdasdsa)",
+      "imageUrl": "/images/featured/zno-nanorods.jpg",
+      "ctaLink": "https://doi.org/10.1002/smll.201704053"
     },
     {
-      "title": "Next generation electronics: Gallium nitride and Gallium oxide",
-      "imageUrl": "/images/wide_bandgap.jpg"
+      "title": "Gallium Nitride: photo assisted",
+      "imageUrl": "/images/featured/gallium-nitride.png"
     }
   ]
 }

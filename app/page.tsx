@@ -1,12 +1,12 @@
 import HeroBanner from "@components/hero-banner-detailed";
 import homeContent from "@data/home.json";
-import featuredWorksData from "@data/featured-works.json";
+// import featuredWorksData from "@data/featured-works.json";
 import { FeaturedWorksCarousel } from "@components/FeaturedWorksCarousel";
 import { Button } from "@components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
-  const { heroBanner, selectePublication } = homeContent;
+  const { heroBanner, selectePublication, featuredWorks } = homeContent;
 
   return (
     <div>
@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py- space-y-16">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-3">
-              <FeaturedWorksCarousel works={featuredWorksData} />
+              <FeaturedWorksCarousel works={featuredWorks} />
             </div>
             <div className="flex-1">
               <div className="bg-gray-400 rounded-md py-3 max-auto mx-auto">
