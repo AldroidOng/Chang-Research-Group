@@ -14,27 +14,29 @@ interface Publication {
 }
 
 const currentYear = new Date().getFullYear();
+const cutoffYear = currentYear - 8; // last 5 years inclusive (currentYear, currentYear-1, ..., currentYear-4)
 
-// Group publications by year
+// Group all publications by year
 const publicationsByYear = publications.reduce((acc, pub) => {
   if (!acc[pub.year]) acc[pub.year] = [];
   acc[pub.year].push(pub);
   return acc;
 }, {} as Record<number, Publication[]>);
 
-// Split into recent and earlier groups
+// Extract recent years (>= cutoffYear)
 const recentYears = Object.keys(publicationsByYear)
   .map(Number)
-  .filter((year) => year >= currentYear - 4) // last 5 years including current
+  .filter((year) => year >= cutoffYear)
   .sort((a, b) => b - a);
 
+// Extract earlier publications (< cutoffYear)
 const earlierPublications = Object.entries(publicationsByYear)
-  .filter(([year]) => Number(year) < currentYear - 4)
+  .filter(([year]) => Number(year) < cutoffYear)
   .flatMap(([_, pubs]) => pubs)
-  .sort((a, b) => b.year - a.year); // optional: sort by year desc inside "Earlier"
+  .sort((a, b) => b.year - a.year); // optional: sort descending inside “Earlier”
 
 export default function PublicationsPage() {
-  // Manage collapsible sections (including “Earlier”)
+  // Add “Earlier” as one of the toggle sections
   const [openYears, setOpenYears] = useState<Record<string, boolean>>(
     Object.fromEntries([
       ...recentYears.map((y) => [String(y), true]),
